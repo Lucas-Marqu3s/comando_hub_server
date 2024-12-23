@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  postgres:
+    restart: always
+    image: postgres:16-alpine
+    container_name: comando_hub_pg
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: comando_hub
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
