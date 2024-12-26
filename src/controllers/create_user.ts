@@ -22,8 +22,8 @@ const createUserBodySchema = z.object({
 
 type CreateUserBodySchema = z.infer<typeof createUserBodySchema>
 
-@Controller('/users')
-export class CreateUsersController {
+@Controller('/user')
+export class CreateUserController {
   constructor(private prisma: PrismaService) {}
 
   @Post()
