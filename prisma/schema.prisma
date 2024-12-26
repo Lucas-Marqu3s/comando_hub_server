@@ -20,12 +20,12 @@ model User {
   createdAt DateTime  @default(now()) @map("created_at")
   updatedAt DateTime? @updatedAt @map("updated_at")
 
-  dahsboards Dahsboard[]
+  dashboards Dashboard[]
 
   @@map("users")
 }
 
-model Dahsboard {
+model Dashboard {
   id    String @id @default(uuid())
   title String
   link  String

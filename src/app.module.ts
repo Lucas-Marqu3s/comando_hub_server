@@ -6,6 +6,7 @@ import { AuthModule } from './auth/auth.module'
 import { CreateUserController } from './controllers/create_user'
 import { AuthenticateController } from './controllers/authenticate'
 import { CreateDashboardController } from './controllers/create_dashboard'
+import { ListDashboardController } from './controllers/list_dashboard'
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { CreateDashboardController } from './controllers/create_dashboard'
     CreateUserController,
     AuthenticateController,
     CreateDashboardController,
+    ListDashboardController,
   ],
   providers: [PrismaService],
 })

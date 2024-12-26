@@ -27,7 +27,7 @@ export class CreateDashboardController {
     const { title, link } = body
     const userId = user.sub
 
-    await this.prisma.dahsboard.create({
+    await this.prisma.dashboard.create({
       data: {
         title,
         link,
