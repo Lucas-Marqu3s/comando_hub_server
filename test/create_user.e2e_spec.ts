@@ -2,6 +2,7 @@ import { AppModule } from '@/app.module'
 import { PrismaService } from '@/prisma/prisma.service'
 import { INestApplication } from '@nestjs/common'
 import { Test } from '@nestjs/testing'
+import { User } from '@prisma/client'
 import request from 'supertest'
 
 describe('Create user (E2E)', () => {
@@ -20,14 +21,16 @@ describe('Create user (E2E)', () => {
   })
 
   test('[POST /user', async () => {
-    const response = await request(app.getHttpServer()).post('/user').send({
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      password: '123456',
-      document: '12345678901',
-      branch: 'Aurora',
-      role: 'admin',
-    })
+    const response = await request(app.getHttpServer())
+      .post('/user')
+      .send(<User>{
+        name: 'John Doe',
+        email: 'john.doe@example.com',
+        password: '123456',
+        document: '12345678901',
+        branch: 'Aurora',
+        role: 'admin',
+      })
 
     expect(response.statusCode).toBe(201)
 

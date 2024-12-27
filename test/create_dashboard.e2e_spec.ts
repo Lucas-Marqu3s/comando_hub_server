@@ -3,6 +3,7 @@ import { PrismaService } from '@/prisma/prisma.service'
 import { INestApplication } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { Test } from '@nestjs/testing'
+import { Dashboard } from '@prisma/client'
 import request from 'supertest'
 
 describe('Create dashboard (E2E)', () => {
@@ -39,7 +40,7 @@ describe('Create dashboard (E2E)', () => {
     const response = await request(app.getHttpServer())
       .post('/dashboard')
       .set('Authorization', `Bearer ${accessToken}`)
-      .send({
+      .send(<Dashboard>{
         title: 'Dash test',
         link: 'http://testdash.com',
       })
