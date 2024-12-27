@@ -1,9 +1,9 @@
 import { Body, Controller, Post, UseGuards } from '@nestjs/common'
-import { CurrentUser } from 'src/auth/current_user_decorator'
-import { JwtAuthGuard } from 'src/auth/jwt_auth.guard'
-import { UserPayload } from 'src/auth/jwt_strategy'
-import { ZodValidationPipe } from 'src/pipes/zod_validation_pipe'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { CurrentUser } from '@/auth/current_user_decorator'
+import { JwtAuthGuard } from '@/auth/jwt_auth.guard'
+import { UserPayload } from '@/auth/jwt_strategy'
+import { ZodValidationPipe } from '@/pipes/zod_validation_pipe'
+import { PrismaService } from '@/prisma/prisma.service'
 import { z } from 'zod'
 
 const createDashboardBodySchema = z.object({

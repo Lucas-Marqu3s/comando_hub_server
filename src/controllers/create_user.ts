@@ -6,10 +6,10 @@ import {
   ConflictException,
   UsePipes,
 } from '@nestjs/common'
-import { PrismaService } from 'src/prisma/prisma.service'
+import { PrismaService } from '@/prisma/prisma.service'
 import { hash } from 'bcryptjs'
 import { z } from 'zod'
-import { ZodValidationPipe } from 'src/pipes/zod_validation_pipe'
+import { ZodValidationPipe } from '@/pipes/zod_validation_pipe'
 
 const createUserBodySchema = z.object({
   name: z.string(),
